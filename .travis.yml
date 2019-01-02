@@ -26,6 +26,7 @@ deploy:
   local-dir: dist
   keep-history: true
   verbose: true
+  # build on all branches
 
 notifications:
   email: false
