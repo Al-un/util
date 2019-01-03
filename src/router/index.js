@@ -1,8 +1,6 @@
 // Vue import
 import Vue from 'vue';
 import Router from 'vue-router';
-// Vue config
-import { baseUrl } from '../../vue.config';
 // Components
 import Calculator from 'Components/calculator/Calculator';
 import Home from 'Components/Home';
@@ -16,8 +14,9 @@ export default new Router({
   // https://router.vuejs.org/api/#mode
   mode: 'history',
   // Routes base
-  // https://router.vuejs.org/api/#mode
-  base: baseUrl,
+  // https://router.vuejs.org/api/#base
+  // [ARGH]: copy pasted from vue.config.js. Export does not work
+  base: process.env.NODE_ENV === 'production' ? '/utils/' : '/',
   // routes defintions
   routes: [
     { path: '/', name: 'root', component: Home },
