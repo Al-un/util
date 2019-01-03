@@ -26,11 +26,6 @@ deploy:
   local-dir: dist
   keep-history: true
   verbose: true
-  # build on master only
-  on:
-    branch: master
-  # default values
-  target-branch: gh-pages
 
 notifications:
   email: false
