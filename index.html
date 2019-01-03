@@ -1,36 +1,9 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><!--[if IE]><link rel="icon" href="/utils/favicon.ico" /><![endif]--><title>Utilities</title><script>// Single Page Apps for GitHub Pages
-      // https://github.com/rafrex/spa-github-pages
-      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-      // ----------------------------------------------------------------------
-      // This script checks to see if a redirect is present in the query string
-      // and converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function(l) {
-        if (l.search) {
-          var q = {};
-          l.search
-            .slice(1)
-            .split('&')
-            .forEach(function(v) {
-              var a = v.split('=');
-              q[a[0]] = a
-                .slice(1)
-                .join('=')
-                .replace(/~and~/g, '&');
-            });
-          if (q.p !== undefined) {
-            window.history.replaceState(
-              null,
-              null,
-              l.pathname.slice(0, -1) +
-                (q.p || '') +
-                (q.q ? '?' + q.q : '') +
-                l.hash
-            );
-          }
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><!--[if IE]><link rel="icon" href="/utils/favicon.ico" /><![endif]--><title>Utilities</title><script src=https://code.jquery.com/jquery-3.3.1.slim.min.js integrity=sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js integrity=sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.3/css/all.css integrity=sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/ crossorigin=anonymous><script>// https://stackoverflow.com/a/50259501/4906586
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          console.log('Redirecting to ' + redirect);
+          history.replaceState(null, null, redirect);
         }
-      })(window.location);</script><script src=https://code.jquery.com/jquery-3.3.1.slim.min.js integrity=sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js integrity=sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.3/css/all.css integrity=sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/ crossorigin=anonymous><link href=/utils/css/app.eba68bd6.css rel=preload as=style><link href=/utils/css/chunk-vendors.3ce0e8f7.css rel=preload as=style><link href=/utils/js/app.b0ad3783.js rel=preload as=script><link href=/utils/js/chunk-vendors.ee4de9da.js rel=preload as=script><link href=/utils/css/chunk-vendors.3ce0e8f7.css rel=stylesheet><link href=/utils/css/app.eba68bd6.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/utils/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/utils/img/icons/favicon-16x16.png><link rel=manifest href=/utils/manifest.json><meta name=theme-color content=#4DBA87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content=vue-util><link rel=apple-touch-icon href=/utils/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/utils/img/icons/safari-pinned-tab.svg color=#4DBA87><meta name=msapplication-TileImage content=/utils/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#000000></head><body><noscript><strong>We're sorry but vue-util doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/utils/js/chunk-vendors.ee4de9da.js></script><script src=/utils/js/app.b0ad3783.js></script></body></html>
+      })();</script><link href=/utils/css/app.eba68bd6.css rel=preload as=style><link href=/utils/css/chunk-vendors.3ce0e8f7.css rel=preload as=style><link href=/utils/js/app.44e18cde.js rel=preload as=script><link href=/utils/js/chunk-vendors.ee4de9da.js rel=preload as=script><link href=/utils/css/chunk-vendors.3ce0e8f7.css rel=stylesheet><link href=/utils/css/app.eba68bd6.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/utils/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/utils/img/icons/favicon-16x16.png><link rel=manifest href=/utils/manifest.json><meta name=theme-color content=#4DBA87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content=vue-util><link rel=apple-touch-icon href=/utils/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/utils/img/icons/safari-pinned-tab.svg color=#4DBA87><meta name=msapplication-TileImage content=/utils/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#000000></head><body><noscript><strong>We're sorry but vue-util doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/utils/js/chunk-vendors.ee4de9da.js></script><script src=/utils/js/app.44e18cde.js></script></body></html>
